@@ -30,14 +30,11 @@ func main() {
 		log.Fatalf("readLines: %s", err)
 	}
 	m := make(map[string]int)
-	frequests := make(map[string]int)
 	for _, text := range lines {
 		data := strings.Split(text, " ")
 		action := data[5][1:]
 		m[data[0]+":"+action]++
-		frequests[data[0]]++
 	}
-
 	n := map[int][]string{}
 	var a []int
 	for k, v := range m {
@@ -58,5 +55,4 @@ func main() {
 			total++
 		}
 	}
-
 }
